@@ -1,0 +1,127 @@
+Airthmetic operation using Numpy
+===============================
+import numpy as np
+ar1=np.arange(1,10).reshape(3,3)
+ar2=np.arange(1,10).reshape(3,3)
+print(ar1)
+print(ar2)
+
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+
+ar1 + ar2
+array([[ 2,  4,  6],
+       [ 8, 10, 12],
+       [14, 16, 18]])
+
+ar2 - ar1 
+array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0]])
+
+ar2 * ar1
+array([[ 1,  4,  9],
+       [16, 25, 36],
+       [49, 64, 81]])
+
+ar1 @ ar2 #matrix
+array([[ 30,  36,  42],
+       [ 66,  81,  96],
+       [102, 126, 150]])
+
+ar1.max()
+9
+
+ar1.dot(ar2) #find matrix
+array([[ 30,  36,  42],
+       [ 66,  81,  96],
+       [102, 126, 150]])
+
+ar1.argmax() #max value index
+8
+
+ar1.max(axis=0) #find column max value
+array([7, 8, 9])
+
+ar1.max(axis=1) #find row max value
+array([3, 6, 9])
+
+np.sum(ar1)
+45
+
+np.sum(ar1,axis=0)
+array([12, 15, 18])
+
+np.mean(ar1) #average
+5.0
+
+np.sqrt(ar1)
+array([[1.        , 1.41421356, 1.73205081],
+       [2.        , 2.23606798, 2.44948974],
+       [2.64575131, 2.82842712, 3.        ]])
+
+np.std(ar1) #standard division
+np.exp(ar1) #exponent
+np.log(ar1) #natural log
+np.log10(ar1)
+
+sliceing & indexing
+====================
+sliceing allows you to extract portion of an array or select subset of an existing
+array to generate new array.for sliceing a sequence of number separated by colon(:).
+
+import numpy as np
+ar1=np.arange(1,21).reshape(5,4)
+ar1
+array([[ 1,  2,  3,  4],
+       [ 5,  6,  7,  8],
+       [ 9, 10, 11, 12],
+       [13, 14, 15, 16],
+       [17, 18, 19, 20]])
+
+ar1[0,0] #row index,column index
+1
+
+ar1[0,0].ndim #sclar value means no dymention
+0
+
+ar1[0] # for single column 0-> row 1st index
+array([1, 2, 3, 4])
+
+ar1[:,0] #for single row
+array([ 1,  5,  9, 13, 17])
+
+ar1[:,0:1]# for single row 2d
+array([[ 1],
+       [ 5],
+       [ 9],
+       [13],
+       [17]])
+
+ar1[1:3,1:3] #row:index , column:index
+array([[ 6,  7],
+       [10, 11]])
+
+ar1[:,1:3] #total row,:column index:column index
+array([[ 2,  3],
+       [ 6,  7],
+       [10, 11],
+       [14, 15],
+       [18, 19]])
+
+
+
+
+
+
+
+
+
+
+
+
+
